@@ -33,7 +33,7 @@ const NavBar = () => {
           <h1>Menu</h1>
         </div>
         <ul id="nav-ul">
-          {
+          { navBar &&
             navBar.map((item, index) => {
               if (item.subItens) {
                 return (<NavFather
