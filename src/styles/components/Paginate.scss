@@ -1,0 +1,44 @@
+@import '../config/config.scss';
+
+#paginate-main {
+  min-height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .paginate-item {
+    width: 40px;
+    height: 40px;
+    background-color: $g1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.disable {
+      opacity: 0.5;
+      cursor: default;
+    }
+
+    &:not(.disable) {
+      &.active, &:hover {
+        background-color: $g2;
+      }
+    }
+
+    &:not(svg) {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    svg {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import '../config/config.scss';
+@import '../config/animation.scss';
+
+#loading {
+  height: 100vh;
+  z-index: 100;
+  background-color: $g1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 1s;
+  position: absolute;
+  left: 20vw;
+
+  #loading-circle {
+    height: 130px;
+    width: 130px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 18px solid $g3;
+    border-top: 18px solid $g2;
+    border-right: 18px solid $g2;
+    animation: spin 1s infinite;
+    transition: all 1s;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: 80vw;
+    min-width: 80vw;
+    max-width: 80vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+  }
+
+  &.hide {
+    @media screen and (min-width: 900px) {
+      width: 0vw;
+      min-width: 0vw;
+      max-width: 0vw;
+    }
+
+    @media screen and (max-width: 900px) {
+      width: 0vw;
+      min-width: 0vw;
+      max-width: 0vw;
+    }
+
+    #loading-circle {
+      height: 0px;
+      width: 0px;
+      animation: none;
+      border: 0px solid $g2;
+    }
+  }
+}

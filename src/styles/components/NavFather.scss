@@ -1,0 +1,33 @@
+@import '../config/config.scss';
+
+.nav-father {
+  color: $primaryColor;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+
+  a {
+    color: $primaryColor;
+    text-decoration: none;
+  }
+
+  &.active {
+    .nav-text {
+      background-color: $g2;
+    }
+  }
+
+  .nav-icon {
+    margin-right: 10px;
+  }
+
+  .nav-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    &:hover {
+      background-color: $g2;
+    }
+  }
+}

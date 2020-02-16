@@ -1,0 +1,40 @@
+@import '../config/config.scss';
+
+.nav-item {
+  color: $primaryColor;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+
+  a {
+    color: $primaryColor;
+    text-decoration: none;
+  }
+
+  &:not(.sub-item) {
+    padding: 10px;
+
+    &.active, &:hover {
+      background-color: $g2;
+    }
+  }
+
+  .nav-icon {
+    margin-right: 10px;
+  }
+
+  &.sub-item {
+    padding: 5px;
+    padding-left: 20px;
+    background-color: $g3;
+
+    .nav-span {
+      text-transform: none;
+      font-size: 12px;
+    }
+
+    &.active, &:hover {
+      background-color: $g4;
+    }
+  }
+}

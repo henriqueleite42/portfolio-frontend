@@ -1,0 +1,4 @@
+@mixin tagConfig($color) {
+  border: 2px solid $color;
+  color: $color;
+}

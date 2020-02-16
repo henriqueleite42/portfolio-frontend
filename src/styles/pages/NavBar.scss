@@ -1,0 +1,41 @@
+@import '../config/config.scss';
+
+#nav-bar {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  z-index: 50;
+
+  #nav-left {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: $g1;
+    transition: all 0.5s;
+    overflow-y: scroll;
+
+    #nav-menu {
+      height: 100px;
+      min-height: 100px;
+      max-height: 100px;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #nav-right {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: $leftWeb;
+
+    #nav-right {
+      display: none;
+    }
+  }
+}

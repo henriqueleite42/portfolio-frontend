@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=B612&display=swap');
+
+@import './config/config.scss';
+@import './config/function.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'B612', sans-serif;
+  user-select: none;
+
+  html, body {
+    width: 100%;
+    height:100%;
+    overflow-x: hidden;
+    color: $primaryColor;
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance:textfield;
+    }
+
+    textarea:focus, input:focus{
+      outline: none;
+    }
+
+    #App {
+      width: 100vw;
+      height: 100vh;
+      min-width: 100vw;
+      min-height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      display: flex;
+      overflow: hidden;
+
+      #half-right {
+        overflow-x: hidden;
+        background-color: $background;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+
+        #nav-show {
+          position: absolute;
+          background-color: $g2;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          bottom: 15px;
+          left: 15px;
+          font-size: 20px;
+          cursor: pointer;
+
+          svg {
+            color: $primaryColor;
+          }
+        }
+      }
+
+      @media screen and (min-width: 900px) {
+        #half-right {
+          width: $rightWeb;
+          min-width: $rightWeb;
+          max-width: $rightWeb;
+
+          #nav-show {
+            display: none;
+          }
+        }
+      }
+
+      @media screen and (max-width: 900px) {
+        #half-right {
+          width: $rightMob;
+          min-width: $rightMob;
+          max-width: $rightMob;
+        }
+
+        &.hide {
+          #nav-bar {
+            width: 0vw;
+
+            #nav-left {
+              width: 0vw;
+            }
+          }
+        }
+
+        &:not(.hide) {
+          #nav-bar {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+
+            #nav-left {
+              width: 75vw;
+              z-index: 50;
+              position: absolute;
+            }
+
+            #nav-right {
+              width: 100vw;
+              height: 100vh;
+              background-color: rgba(70,70,70, 0.7);
+              top: 0;
+              z-index: 49;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(40,40,40, 0.7);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(40,40,40, 1);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(70,70,70, 0.4);
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.tag {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 5px;
+  @include tagConfig($g5)
+
+  // languages
+  &.js { @include tagConfig(#f7e018) }
+  &.css { @include tagConfig(#1572b7) }
+  &.html { @include tagConfig(#e54d26) }
+  &.php { @include tagConfig(#777bb3) }
+
+  // frameworks
+  &.react { @include tagConfig(#61dafb) }
+  &.sass { @include tagConfig(#ff99cc) }
+  &.cake { @include tagConfig(#d33842) }
+  &.node { @include tagConfig(#74b858) }
+
+  // data bank
+  &.mysql { @include tagConfig(#4479a1) }
+  &.mongodb { @include tagConfig(#13aa52) }
+}

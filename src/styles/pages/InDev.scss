@@ -1,0 +1,37 @@
+@import '../config/config.scss';
+@import '../config/animation.scss';
+
+#in-dev {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+
+  #gear-animation {
+    margin-bottom: 5vh;
+
+    .gear-big {
+      font-size: 250px;
+      color: $g5;
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 17500ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    }
+  }
+
+  span {
+    font-size: 30px;
+    color: $g5;
+
+    &:after {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      animation: ellipsis-30 steps(4,end) 1500ms infinite;
+      content: "\2026";
+      width: 0px;
+    }
+  }
+}
