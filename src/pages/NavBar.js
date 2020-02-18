@@ -22,7 +22,7 @@ const NavBar = () => {
     axios.get(makePath(['navbar', 'search'], true))
     .then(res => {
       removeLoading();
-      console.log(res.data)
+
       setNavBar(res.data)
     });
   }, []);
@@ -34,7 +34,7 @@ const NavBar = () => {
           <h1>Menu</h1>
         </div>
         <ul id="nav-ul">
-          { navBar &&
+          { (navBar.length < 1) ||
             navBar.map((item, index) => {
               if (item.subItens) {
                 return (<NavFather
