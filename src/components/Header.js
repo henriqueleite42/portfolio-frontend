@@ -10,7 +10,6 @@ import '../styles/components/Header.scss';
 
 // Render
 const Header = ({ name, searchBar, subTitle, filters, onSearch }) => {
-  const [ state, setState ] = useState(false);
   const [ stateFilters, setStateFilters ] = useState(false);
 
   return (
@@ -21,14 +20,12 @@ const Header = ({ name, searchBar, subTitle, filters, onSearch }) => {
       </div>
       { searchBar &&
         <div className={ "header-body" + (filters ? " include-filters" : "")}>
-          <div className={ "search-bar" + (state ? " active" : "") }>
+          <div className="search-bar">
             <input
               type="text"
               id="search-bar"
               placeholder="Search"
               className="search-input"
-              onFocus={ () => setState(true) }
-              onBlur={ () => setState(false) }
             />
             <FontAwesomeIcon
               className="search-icon"

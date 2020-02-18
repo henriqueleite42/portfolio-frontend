@@ -11,7 +11,6 @@
   flex-direction: column;
   transition: all 1s;
   position: absolute;
-  left: 20vw;
 
   #loading-circle {
     height: 130px;
@@ -30,6 +29,7 @@
     width: 80vw;
     min-width: 80vw;
     max-width: 80vw;
+    left: 20vw;
   }
 
   @media screen and (max-width: 900px) {

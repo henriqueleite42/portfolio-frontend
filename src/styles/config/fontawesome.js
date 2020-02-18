@@ -15,7 +15,9 @@ import {
   faAngleRight,
   faAngleLeft,
   faCheck,
-  faFilter
+  faFilter,
+  faPhoneSquareAlt,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -33,7 +35,9 @@ library.add(
   faAngleRight,
   faAngleLeft,
   faCheck,
-  faFilter
+  faFilter,
+  faPhoneSquareAlt,
+  faEnvelope
 );
 
 export default library;

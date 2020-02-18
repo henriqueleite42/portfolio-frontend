@@ -67,6 +67,10 @@ const general = {
     words.forEach(word => formatted.push(word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()))
 
     return formatted.join(' ')
+  },
+
+  showError: msg => {
+
   }
 };
 

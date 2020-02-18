@@ -22,6 +22,7 @@ const NavBar = () => {
     axios.get(makePath(['navbar', 'search'], true))
     .then(res => {
       removeLoading();
+      console.log(res.data)
       setNavBar(res.data)
     });
   }, []);

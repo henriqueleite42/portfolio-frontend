@@ -14,7 +14,7 @@ import { makePath, getYear, addLoading, removeLoading } from '../../functions';
 import '../../styles/pages/Projects.scss';
 
 // Render
-const Projects = () => {
+const Projects = ({ category }) => {
   const [ projects, setProjects ] = useState([]);
   const [ skills, setSkills ] = useState([]);
   const [ pagination, setPagination ] = useState({
@@ -25,7 +25,11 @@ const Projects = () => {
   useEffect(() => {
     addLoading();
 
-    axios.get(makePath(['project', 'search'], true) + '?mode=list')
+    axios.get(
+      makePath(['project', 'search'], true) +
+      '?mode=list' +
+      (category ? ('&category=' + category) : '')
+    )
     .then(res => {
       removeLoading();
 

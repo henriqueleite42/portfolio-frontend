@@ -1,0 +1,191 @@
+@import '../config/config.scss';
+
+#contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  @media screen and (max-width: 900px) {
+    width: $rightMob;
+    min-width: $rightMob;
+    max-width: $rightMob;
+  }
+
+  @media screen and (min-width: 900px) {
+    width: $rightWeb;
+    min-width: $rightWeb;
+    max-width: $rightWeb;
+  }
+
+  #contact-main {
+    @media screen and (max-width: 900px) {
+      width: 90vw;
+    }
+
+    @media screen and (min-width: 900px) {
+      width: 50vw;
+    }
+
+    height: 90vh;
+
+    padding: 4vw;
+
+    background-color: $g1;
+
+    border-radius: 10px;
+
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+    .contact-row {
+      margin-top: 4vh;
+      width: 100%;
+      justify-content: flex-start;
+      align-content: space-between;
+
+      .contact-way {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+
+        > svg {
+          font-size: 25px;
+        }
+
+        > span {
+          margin-left: 10px;
+        }
+      }
+
+      .input-div {
+        padding: 20px;
+        border-radius: 7px;
+        border: none;
+        background-color: $g2;
+
+        .input-input {
+          border: none;
+          width: 100%;
+          background-color: transparent;
+          color: $primaryColor;
+          resize: none;
+
+          &:focus::placeholder {
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    > div {
+      &:nth-child(3) {
+        flex-direction: column;
+
+        > div {
+          margin-bottom: 2vh;
+
+          &:last-child {
+            height: 150px;
+            margin-bottom: 0;
+
+            textarea {
+              height: 100%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        > button {
+          border: none;
+          color: $primaryColor;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 18px;
+          padding: 15px;
+          background-color: $g3;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: $g2;
+          }
+        }
+
+        @media screen and (min-height: 600px) and (max-height: 700px) and (min-width: 600px) {
+          margin-top: 2vh !important;
+        }
+
+        @media screen and (min-height: 700px) and (max-height: 800px) {
+          margin-top: 9vh;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 400px) and (min-height: 600px) and (max-height: 700px) {
+          margin-top: 4vh !important;
+        }
+      }
+    }
+
+    @media screen and (min-height: 500px) and (max-height: 600px) and (max-width: 900px) {
+      > h1 {
+        font-size: 30px;
+      }
+
+      .contact-way {
+        font-size: 15px;
+      }
+
+      .contact-row .input-div {
+        padding: 10px;
+      }
+
+      > div {
+        input, textarea {
+          font-size: 15px;
+        }
+      }
+    }
+
+    @media screen and (min-height: 600px) and (max-height: 700px) and (max-width: 900px) {
+      > div:nth-child(4) {
+        margin-top: 6vh;
+      }
+    }
+
+    @media screen and (min-height: 800px) and (max-height: 900px) and (max-width: 900px) {
+      > h1 {
+        font-size: 45px;
+      }
+
+      .contact-way {
+        font-size: 20px;
+      }
+
+      > div {
+        input, textarea {
+          font-size: 20px;
+        }
+
+        &:nth-child(3) {
+          div:last-child {
+            height: 30vh;
+          }
+        }
+
+        &:nth-child(4) {
+          > button {
+            font-size: 25px;
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: 350px) and (max-width: 400px) and (min-height: 800px) {
+      .contact-way {
+        font-size: 18.5px;
+      }
+    }
+  }
+}
